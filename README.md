@@ -45,8 +45,8 @@ sce_token 模块
 
  **sce_token 安装**
 
-```cd sql/
-python setup.py install```
+    cd sql/
+    python setup.py install
 
 其他
 -----------
