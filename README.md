@@ -13,7 +13,7 @@ MySQL Proxy in SCE (Sohu Cloud Engine)
 - 基本请求转发
 - 私有 SQL
 - 自定义错误信息
-- 客户端 IP 白名单
+- 客户端连接限制
 - SQL 白名单
 - 读写分离
 - 连接保持和释放
