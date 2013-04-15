@@ -1,19 +1,31 @@
 mysql_proxy
 ===========
-
 MySQL Proxy in SCE (Sohu Cloud Engine)
 
-weibo: [http://weibo.com/sohusce]
+简介
+-----------
+> 搜狐云引擎（SCE，Sohu Cloud Engine）是搜狐公司推出的PaaS平台，目前处于私有云阶段，在不久的将来将发布公有云，敬请期待。
+> MySQL Proxy 是 SCE 不可或缺的部分，它隔离了应用和数据库服务器，便于 SCE 集中管理数据库配置信息，并对数据库资源进行统计和限制，给服务计费和日志报表等提供元数据。
 
-python and its dependencies:
+功能
+-----------
+- MySQL 握手协议、挥手协议和请求协议的解析
+- 基本请求转发
+- 私有 SQL
+- 自定义错误信息
+- 客户端 IP 白名单
+- SQL 白名单
+- 读写分离
+- 连接保持和释放
+- 数据库动态配置
+- 流量统计限制
+- 连接数统计限制
+- 数据库配额限制
 
-python version
-
-- 2.6/2.7
-
-python modules
-
-- *** sce_token ***
+Python 版本及其依赖
+-----------
+- Python 2.7.3
+- sce_token
 - MySQLdb
  - mysql
  - mysql-devel
@@ -27,16 +39,20 @@ python modules
 - pika
 - python-memcached
 
+sce_token 模块
+-----------
+> sce_token 模块封装 MySQL 官方数据库代理 mysql-proxy 的词法分析部分，见[http://dev.mysql.com/downloads/mysql-proxy/]
 
-**How to install python extension sce_token ?**
+ **sce_token 安装**
 
-cd sql/
+```cd sql/
+python setup.py install```
 
-python setup.py install
+其他
+-----------
+有问题请联系 [http://weibo.com/sohusce]
 
-sql/src/*.[ch] are source codes extracted from [http://dev.mysql.com/downloads/mysql-proxy/]
-
-all directories and files:
+项目目录结构：
 <pre>
 .
 ├── docs
@@ -94,4 +110,4 @@ all directories and files:
 6 directories, 45 files
 </pre>
 [http://weibo.com/sohusce]: http://weibo.com/sohusce
-[http://dev.mysql.com/downloads/mysql-proxy/]: http://dev.mysql.com/downloads/mysql-proxy/
+[http://dev.mysql.com/downloads/mysql-proxy/]: http://dev.mysql.com/downloads/mysql-proxy/ 
